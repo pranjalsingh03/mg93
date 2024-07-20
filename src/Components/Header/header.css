@@ -1,0 +1,185 @@
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+
+.container-fluid{
+  background-color: transparent;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-right: 3%;
+}
+
+
+.contactus-button{
+  position: relative;
+  left: 0px;
+  display: none;
+}
+
+/* nav{
+  background:rgba(0,0,0,.7);
+  backdrop-filter: blur(15px);
+} */
+
+.toggle-button{
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar{
+    padding: 0%;
+    top: 0px;
+    transition: background-color .2s;
+    /* position: fixed; */
+    left: 0;
+    right: 0;
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+    z-index: 1030;
+    transition: padding-top .3s,padding-bottom .3s;
+    
+  }
+  .image-logo-header{
+    height: 45px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px lightblue;
+  }
+  /* .nav-a{
+    color: var(--adrakcolor);
+  }
+  .nav-item{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .nav-a:hover{
+    color: rgb(5, 8, 10);
+  } */
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+  }
+
+.button{
+	/* border: 0.35rem solid; */
+  position: relative;
+  left: 95%;
+  background: none;
+  color: var(--allsubhed);
+  /* border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards; */
+
+}
+  
+.dark_mode {
+  margin-top: -30px;
+  margin-left: 10px;
+}
+
+.dark_mode_label {
+  width: 65px;
+  height: 30px;
+  position: relative;
+  display: block;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dark_mode_label:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  background:linear-gradient(180deg, #777, #3a3a3a);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.dark_mode_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.dark_mode_input:checked + .dark_mode_label:after {
+  left: 28px;
+  transform: translateX(-100%);
+  background:  linear-gradient(180deg, #ffcc89, #d8860b);
+}
+.dark_mode_label:active:after {
+  width: 30px;
+}
+
+.dark_mode_label svg {
+  position: absolute;
+  width: 20px;
+  top: 5px;
+  z-index: 100;
+}
+.dark_mode_label svg.sun {
+  left: 5px;
+  fill: #fff;
+  transition: 0.3s;
+}
+.dark_mode_label svg.moon {
+  left: 40px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+}
+.dark_mode_input:checked + .dark_mode_label svg.sun {
+  fill: #fff;
+}
+.dark_mode_input:checked + .dark_mode_label svg.moon {
+  fill: #fff;
+}
+
+
+  /* For screen size more than 400px */
+@media screen and (max-width: 780px) {
+  .image-logo-header{
+    height: 45px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px lightblue;
+  }
+  .toggle-button{
+    position: relative;
+  }
+}
