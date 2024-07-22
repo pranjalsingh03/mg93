@@ -1,0 +1,14 @@
+.text-center{
+    color: var(--adrakcolor);
+}
+.image-foot{
+    height: 30px;
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(4, 255, 196));
+
+}
+
+
+
+@media screen and (max-width: 780px) {
+    
+}

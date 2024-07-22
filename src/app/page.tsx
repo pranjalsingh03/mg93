@@ -4,6 +4,8 @@ import Header from "../Components/Header/header";
 import HomeM from "../Components/Home/home"
 import "../app/globals.css"
 import Lang from "@/Components/Languages/Lang";
+import ContactUs from "@/Components/Contactus/contact";
+import Footer from "@/Components/Footer/footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Intro/>  </div>
       <HomeM/>
       <Lang/>
+      <ContactUs/>
+      <Footer/>
     </>
   );
 }2
