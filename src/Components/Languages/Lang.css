@@ -1,0 +1,19 @@
+.row{
+    padding-left: 10%;
+    padding-right: 10%;
+    color: var(--allsubhed);
+    font-size: 20px;
+}
+.border-solid{
+    border: 1px solid var(--allsubhed);
+}
+
+.lead{
+    color: var(--allsubhed);
+}
+
+.Wccysa{
+    color: var(--allsubhed);
+    font-size: 50px;
+    font-weight: 600;
+}
