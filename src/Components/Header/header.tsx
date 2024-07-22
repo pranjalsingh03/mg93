@@ -5,6 +5,7 @@ import logo from "../../Images/logo1.png"
 import { useState, useEffect } from "react";
 import Sun from "../../../public/Sun.svg";
 import Moon from "../../../public/Moon.svg";
+import Image from 'next/image';
 
 
 const Header: FC=()=> {
@@ -26,7 +27,7 @@ const Header: FC=()=> {
     <nav className="navbar navbar-expand-lg navbar-light">
     <div className="container-fluid">
       <a className="navbar-brand" href="https://github.com/pranjalsingh03">
-        <img src={logo.toString()} alt='logo' className='image-logo-header' />
+        <Image src={logo} alt='logo' className='image-logo-header' />
       </a>
       <div className='dark_mode'>
         <input
@@ -36,7 +37,7 @@ const Header: FC=()=> {
           onClick={() => togglethemes()}
         />
         <label className='dark_mode_label' htmlFor='darkmode-toggle'>
-          <Moon /><Sun />
+          <Moon className="moon"/><Sun className="sun" />
         </label>
       </div>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">

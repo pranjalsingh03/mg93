@@ -19,10 +19,10 @@
   background-color: transparent;
     padding: 10px;
     font-size: 20px;
-    text-align: center;
     padding-left: 3%;
     padding-right: 3%;
     padding-right: 3%;
+    display: flex;
 }
 
 
@@ -61,7 +61,8 @@
     
   }
   .image-logo-header{
-    height: 45px;
+    height: 60px;
+    width: 60px;
     border-radius: 30px;
     box-shadow: 0px 0px 15px lightblue;
   }
@@ -106,8 +107,8 @@
 }
   
 .dark_mode {
-  margin-top: -30px;
-  margin-left: 10px;
+  margin-top: -15px;
+  margin-left: 31px;
 }
 
 .dark_mode_label {
@@ -154,20 +155,20 @@
   top: 5px;
   z-index: 100;
 }
-.dark_mode_label svg.sun {
+.sun {
   left: 5px;
   fill: #fff;
   transition: 0.3s;
 }
-.dark_mode_label svg.moon {
+.moon {
   left: 40px;
   fill: #7e7e7e;
   transition: 0.3s;
 }
-.dark_mode_input:checked + .dark_mode_label svg.sun {
+.dark_mode_input:checked + .dark_mode_label .sun {
   fill: #fff;
 }
-.dark_mode_input:checked + .dark_mode_label svg.moon {
+.dark_mode_input:checked + .dark_mode_label .moon {
   fill: #fff;
 }
 
@@ -175,7 +176,7 @@
   /* For screen size more than 400px */
 @media screen and (max-width: 780px) {
   .image-logo-header{
-    height: 45px;
+    /* height: 45px; */
     border-radius: 30px;
     box-shadow: 0px 0px 15px lightblue;
   }
