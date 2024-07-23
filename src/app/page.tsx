@@ -6,6 +6,7 @@ import "../app/globals.css"
 import Lang from "@/Components/Languages/Lang";
 import ContactUs from "@/Components/Contactus/contact";
 import Footer from "@/Components/Footer/footer";
+import Projects from "@/Components/Projects/projects"
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Intro/>  </div>
       <HomeM/>
       <Lang/>
+      <Projects/>
       <ContactUs/>
       <Footer/>
     </>
