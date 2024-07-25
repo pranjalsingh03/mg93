@@ -12,6 +12,9 @@ const nextConfig = {
 
         return config;
     },
+    env:{
+        GITHUB_TOKEN : process.env.GITHUB_TOKEN
+    }
 };
 
 export default nextConfig;
