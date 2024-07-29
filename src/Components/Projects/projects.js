@@ -32,31 +32,34 @@ const Projects = () => {
 
     return (
         <div className="main-content-area-box">
-            <h3 className="Heading-sc-16ftyqo-0 gRQVKa" data-sr-id="3">
+            <h3 className="gRQVKa" data-sr-id="3">
                 Some Things I've Built
             </h3>
             {loading ? (
                 <div className="loading-spinner">Loading...</div>
             ) : (
-                projects.map((project, index) => (
-                    <div key={index} className="featured__StyledProject-sc-19vdtah-9 VhaEB" data-sr-id="4">
-                        <div className="featured__StyledContent-sc-19vdtah-1 gWlhZI">
-                            <h4 className="featured__StyledLabel-sc-19vdtah-2 dZTpBf">Featured Project</h4>
-                            <h5 className="featured__StyledProjectName-sc-19vdtah-3 jRnWTV">
-                                <a href={project.html_url} target="_blank" rel="nofollow noopener noreferrer" aria-label="External Link">
-                                    {project.name}
-                                </a>
-                            </h5>
-                            <div className="featured__StyledDescription-sc-19vdtah-4 hwxmov">
-                                <p>{project.description}</p>
-                            </div>
-                            <div className="project-links">
-                                <a href={project.homepage} target="_blank" rel="nofollow noopener noreferrer" className="live-preview">Live Preview</a>
-                                <a href={project.html_url} target="_blank" rel="nofollow noopener noreferrer" className="github-link">Source Code</a>
+                <div className="project-grid">
+                    {projects.map((project, index) => (
+                        <div key={index} className="project" data-sr-id="4">
+                            <div className="gWlhZI">
+                                <h4 className="dZTpBf">Featured Project</h4>
+                                <h5 className="jRnWTV">
+                                    <a href={project.html_url} target="_blank" rel="nofollow noopener noreferrer" aria-label="External Link">
+                                        {project.name}
+                                    </a>
+                                </h5>
+                                <div className="hwxmov">
+                                    <p>{project.description}</p>
+                                </div>
+                                <div className="project-links">
+                                    <a href={project.homepage} target="_blank" rel="nofollow noopener noreferrer" className="live-preview">Live Preview</a>
+                                    <a href={project.html_url} target="_blank" rel="nofollow noopener noreferrer" className="github-link">Source Code</a>
+                                </div>
+                                <span className='language'>{project.language}</span>
                             </div>
                         </div>
-                    </div>
-                ))
+                    ))}
+                </div>
             )}
         </div>
     );

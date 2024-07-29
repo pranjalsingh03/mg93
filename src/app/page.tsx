@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Intro from "../Components/Intro/intro";
 import Header from "../Components/Header/header";
@@ -24,4 +25,4 @@ export default function Home() {
       <Footer/>
     </>
   );
-}2
+}

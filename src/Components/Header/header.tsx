@@ -1,7 +1,7 @@
 "use client";
 import React, { FC } from 'react';
 import './header.css';
-import logo from "../../Images/logo1.png"
+import logo from "../../../public/logo1.png"
 import { useState, useEffect } from "react";
 import Sun from "../../../public/Sun.svg";
 import Moon from "../../../public/Moon.svg";
