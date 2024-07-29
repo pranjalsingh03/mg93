@@ -6,7 +6,6 @@
     align-items: center;
     padding-top: 20%;
     padding-bottom: 15%;
-    padding-left: 8rem;
 }
 .main-box-area-left{
     height: 100%;
@@ -30,8 +29,8 @@
     color: var(--allsubhed);
 }
 .profile-picture{
-    height: 20rem;
-    width: 20rem;
+    height: 23rem;
+    width: 23rem;
     border-radius:  18% ;
     position: relative;
     left: 6rem;

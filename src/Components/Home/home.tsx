@@ -5,7 +5,7 @@ import profile from "../../../public/profile.jpg";
 
 const HomeM = () => {
     return (
-                <div className="main-box-area">
+                <div className="container main-box-area">
                     <div className="row g-0">
                         <div className="col-md-6">
                             <div className="main-box-area-left-content-para">
