@@ -8,6 +8,7 @@ import Lang from "@/Components/Languages/Lang";
 import ContactUs from "@/Components/Contactus/contact";
 import Footer from "@/Components/Footer/footer";
 import Projects from "@/Components/Projects/projects"
+import Experience from "@/Components/Experience/Experience";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Header/>
       <Intro/>  </div>
       <HomeM/>
+      <Experience/>
       <Lang/>
       <Projects/>
       <ContactUs/>

@@ -14,7 +14,7 @@ const Intro: FC = () => {
     useEffect(() => {
         const typed = new Typed(el.current, {
             strings: [
-                "Front-end developer",
+                "Full stack developer",
                 "UI/UX Designer",
                 "Student"
             ],
