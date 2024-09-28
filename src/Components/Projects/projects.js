@@ -27,17 +27,17 @@ const Projects = () => {
                 setLoading(false);
             }
         };
-        fetchProjects();
-    }, []);
+        if (GitHub) fetchProjects();  // Ensure GitHub token is available
+    }, [GitHub]);  // Add GitHub as a dependency here
 
     return (
         <div className="main-content-area-box">
             <h3 className="gRQVKa" data-sr-id="3">
-                Some Things I've Built
+                Some Things I&apos;ve Built
             </h3>
             {loading ? (
                 <div className="loading-spinner">Loading...</div>
-            ) : (
+            ) : projects.length > 0 ? (
                 <div className="project-grid">
                     {projects.map((project, index) => (
                         <div key={index} className="project" data-sr-id="4">
@@ -49,10 +49,14 @@ const Projects = () => {
                                     </a>
                                 </h5>
                                 <div className="hwxmov">
-                                    <p>{project.description}</p>
+                                    <p>{project.description || "No description available."}</p>
                                 </div>
                                 <div className="project-links">
-                                    <a href={project.homepage} target="_blank" rel="nofollow noopener noreferrer" className="live-preview">Live Preview</a>
+                                    {project.homepage ? (
+                                        <a href={project.homepage} target="_blank" rel="nofollow noopener noreferrer" className="live-preview">Live Preview</a>
+                                    ) : (
+                                        <span className="no-preview">No live preview</span>
+                                    )}
                                     <a href={project.html_url} target="_blank" rel="nofollow noopener noreferrer" className="github-link">Source Code</a>
                                 </div>
                                 <span className='language'>{project.language}</span>
@@ -60,6 +64,8 @@ const Projects = () => {
                         </div>
                     ))}
                 </div>
+            ) : (
+                <div className="no-projects">No projects found.</div>
             )}
         </div>
     );

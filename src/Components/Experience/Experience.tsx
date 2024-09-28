@@ -18,7 +18,7 @@ function Experience() {
 
     return (
         <div className="container mx-auto p-16 py-12 text-gray-200">
-            <h2 className="text-3xl font-bold expi">02. I've worked with</h2>
+            <h2 className="text-3xl font-bold expi">02. I&apos;ve worked with</h2>
 
             <div className="flex mt-10 space-x-8">
                 <div className="w-1/5">

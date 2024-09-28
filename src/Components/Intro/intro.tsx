@@ -3,6 +3,11 @@ import React, { useEffect, useRef, FC } from "react";
 import Image from 'next/image';
 import './intro.css';
 import "./stars.css";
+import Github from "../../../public/github.svg";
+import Twitter from "../../../public/twitter.svg";
+import Linkedin from "../../../public/linkedin.svg";
+import Facebook from "../../../public/facebook.svg";
+import Instagram from "../../../public/instagram.svg";
 import Typed from 'typed.js';
 
 // Define the type for the ref
@@ -41,32 +46,32 @@ const Intro: FC = () => {
                     </h1>
                     <div className="jsUDeb">
                         <a href="https://github.com/pranjalsingh03">
-                            <img src="/github.svg" alt="github" className="responsive-logo-intro" />
+                            <Image src={Github} alt="github" className="responsive-logo-intro" />
                         </a>
                         <a href="https://www.linkedin.com/in/pranjalsingh03/">
-                            <img src="/linkedin.svg" alt="linkedin" className="responsive-logo-intro" />
+                            <Image src={Linkedin} alt="linkedin" className="responsive-logo-intro" />
                         </a>
                         <a href="https://twitter.com/pranjal_magan09">
-                            <img src="/twitter.svg" alt="twitter" className="responsive-logo-intro" />
+                            <Image src={Twitter} alt="twitter" className="responsive-logo-intro" />
                         </a>
                     </div>
                 </div>
                 <div className="gXnnBS">
                     <div className="email__StyledLinkWrapper-sc-1fu3fru-0 dvseSq fade-enter-done">
                         <a href="https://github.com/pranjalsingh03">
-                            <img src="/github.svg" alt="github" className="Image-logo imagelogo" />
+                            <Image src={Github} alt="github" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://www.linkedin.com/in/pranjalsingh03/">
-                            <img src="/linkedin.svg" alt="linkedin" className="Image-logo imagelogo" />
+                            <Image src={Linkedin} alt="linkedin" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://www.instagram.com/sanatani_magan09/">
-                            <img src="/instagram.svg" alt="instagram" className="Image-logo imagelogo" />
+                            <Image src={Instagram} alt="instagram" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://twitter.com/pranjal_magan09">
-                            <img src="/twitter.svg" alt="twitter" className="Image-logo imagelogo" />
+                            <Image src={Twitter} alt="twitter" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://www.facebook.com/magan728">
-                            <img src="/facebook.svg" alt="facebook" className="facebook-logo imagelogo" />
+                            <Image src={Facebook} alt="facebook" className="facebook-logo imagelogo" />
                         </a>
                     </div>
                 </div>
