@@ -27,16 +27,16 @@ function Experience() {
                             <li key={index}>
                                 <button
                                     onClick={() => setSelectedCompany(index)}
-                                    className={`text-left text-lg font-medium comp pl-4 border-l-4 ${
-                                        selectedCompany === index
+                                    className={`text-left text-lg font-medium comp pl-4 border-l-4 ${selectedCompany === index
                                             ? 'text-teal-400 border-teal-400'
                                             : 'list-items border-transparent'
-                                    }`}
-                                >
+                                        }`}
+                                    aria-pressed={selectedCompany === index}>
                                     {experience.company}
                                 </button>
                             </li>
                         ))}
+
                     </ul>
                 </div>
 
