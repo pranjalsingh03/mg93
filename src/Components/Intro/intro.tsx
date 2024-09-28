@@ -3,11 +3,11 @@ import React, { useEffect, useRef, FC } from "react";
 import Image from 'next/image';
 import './intro.css';
 import "./stars.css";
-import Github from "../../../public/github.svg";
-import Twitter from "../../../public/twitter.svg";
-import Linkedin from "../../../public/linkedin.svg";
-import Facebook from "../../../public/facebook.svg";
-import Instagram from "../../../public/instagram.svg";
+import Github from "../../app/github.svg";
+import Twitter from "../../app/twitter.svg";
+import Linkedin from "../../app/linkedin.svg";
+import Facebook from "../../app/facebook.svg";
+import Instagram from "../../app/instagram.svg";
 import Typed from 'typed.js';
 
 // Define the type for the ref
@@ -46,32 +46,32 @@ const Intro: FC = () => {
                     </h1>
                     <div className="jsUDeb">
                         <a href="https://github.com/pranjalsingh03">
-                            <Image src={Github} alt="github" className="responsive-logo-intro" />
+                            <Github alt="github" className="responsive-logo-intro" />
                         </a>
                         <a href="https://www.linkedin.com/in/pranjalsingh03/">
-                            <Image src={Linkedin} alt="linkedin" className="responsive-logo-intro" />
+                            <Linkedin alt="linkedin" className="responsive-logo-intro" />
                         </a>
                         <a href="https://twitter.com/pranjal_magan09">
-                            <Image src={Twitter} alt="twitter" className="responsive-logo-intro" />
+                            <Twitter alt="twitter" className="responsive-logo-intro" />
                         </a>
                     </div>
                 </div>
                 <div className="gXnnBS">
                     <div className="email__StyledLinkWrapper-sc-1fu3fru-0 dvseSq fade-enter-done">
                         <a href="https://github.com/pranjalsingh03">
-                            <Image src={Github} alt="github" className="Image-logo imagelogo" />
+                            <Github alt="github" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://www.linkedin.com/in/pranjalsingh03/">
-                            <Image src={Linkedin} alt="linkedin" className="Image-logo imagelogo" />
+                            <Linkedin alt="linkedin" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://www.instagram.com/sanatani_magan09/">
-                            <Image src={Instagram} alt="instagram" className="Image-logo imagelogo" />
+                            <Instagram alt="instagram" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://twitter.com/pranjal_magan09">
-                            <Image src={Twitter} alt="twitter" className="Image-logo imagelogo" />
+                            <Twitter alt="twitter" className="Image-logo imagelogo" />
                         </a>
                         <a href="https://www.facebook.com/magan728">
-                            <Image src={Facebook} alt="facebook" className="facebook-logo imagelogo" />
+                            <Facebook alt="facebook" className="facebook-logo imagelogo" />
                         </a>
                     </div>
                 </div>
