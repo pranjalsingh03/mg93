@@ -118,6 +118,17 @@ body {
 
 /*  Dark theme and light theme */
 
+.expi{
+  color: var(--allsubhed);
+  
+}
+
+.comp{
+  color: var(--aboutcolor);
+}
+.list-items{
+  color: var(--adrakcolor);
+}
 
 
 *{
