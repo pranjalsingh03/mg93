@@ -118,16 +118,65 @@ body {
 
 /*  Dark theme and light theme */
 
-.expi{
+.expi {
   color: var(--allsubhed);
-  
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.comp{
+.companies {
   color: var(--aboutcolor);
+  width: 100%;
 }
-.list-items{
+
+.list-items {
   color: var(--adrakcolor);
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  list-style: disc;
+  color: var(--adrakcolor);
+  margin-top: 1rem;
+}
+
+.space-memo > *:not([hidden]) + *:not([hidden]) {
+  margin-top: 1rem;
+}
+
+.space-x-memo > *:not([hidden]) + *:not([hidden]) {
+  margin-left: 2rem;
+}
+
+.company {
+  width: 100%;
+}
+
+.desc {
+  width: 100%;
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.li-desc {
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.li-comp {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 1rem;
 }
 
 

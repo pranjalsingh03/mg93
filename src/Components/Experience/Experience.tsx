@@ -18,17 +18,17 @@ function Experience() {
 
     return (
         <div className="container mx-auto p-16 py-12 text-gray-200">
-            <h2 className="text-3xl font-bold expi">02. I&apos;ve worked with</h2>
-
-            <div className="flex mt-10 space-x-8">
-                <div className="w-1/5">
-                    <ul className="space-y-4">
+            <div className="expi">02. I&apos;ve worked with</div>
+            <div className="flex mt-10">
+                
+                <div className="w-1/4">
+                    <ul className="li-desc">
                         {experiences.map((experience, index) => (
                             <li key={index}>
                                 <button
                                     onClick={() => setSelectedCompany(index)}
-                                    className={`text-left text-lg font-medium comp pl-4 border-l-4 ${selectedCompany === index
-                                            ? 'text-teal-400 border-teal-400'
+                                    className={`text-left font-medium pl-4 border-l-4 ${selectedCompany === index
+                                            ? 'companies border-teal-400'
                                             : 'list-items border-transparent'
                                         }`}
                                     aria-pressed={selectedCompany === index}>
@@ -36,25 +36,23 @@ function Experience() {
                                 </button>
                             </li>
                         ))}
-
                     </ul>
                 </div>
 
-                {/* Right Side: Job Details */}
-                <div className="w-3/4 px-8">
+                <div className="flex-grow px-8">
                     {experiences[selectedCompany].title ? (
                         <>
-                            <h3 className="comp text-xl font-semibold">
+                            <div className="text-xl font-semibold companies">
                                 {experiences[selectedCompany].title}
-                            </h3>
-                            <p className="list-items text-lg mt-2">
+                            </div>
+                            <div className="text-lg mt-2 description">
                                 {experiences[selectedCompany].location}
-                            </p>
+                            </div>
 
-                            <ul className="list-disc list-outside mt-4 space-y-3 px-4">
+                            <ul className="li-comp description">
                                 {experiences[selectedCompany].description.map(
                                     (point, index) => (
-                                        <li key={index} className="list-items text-lg">
+                                        <li key={index} className="text-lg">
                                             {point}
                                         </li>
                                     )
