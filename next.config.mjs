@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
     distDir: 'dist', // Ensure this matches your expectations
     webpack: (config, { isServer }) => {
         if (!isServer) {
