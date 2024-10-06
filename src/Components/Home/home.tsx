@@ -1,7 +1,6 @@
 import React from "react";
 import "./home.css"
 import Image from "next/image";
-import profile from "../../../public/profile.jpg";
 
 const HomeM = () => {
     return (
@@ -14,7 +13,7 @@ const HomeM = () => {
 
                             </div>
                         </div>
-                        <div className="col-md-6  order-md-last" ><Image className="profile-picture" src={profile} alt="hello" /></div>
+                        <div className="col-md-6  order-md-last" ><Image className="profile-picture" src="https://i.ibb.co/qF47NSW/profile.jpg" alt="hello" width={92} height={92} unoptimized/></div>
                     </div>
                 </div>
     )

@@ -14,6 +14,9 @@ const nextConfig = {
 
         return config;
     },
+    images: {
+        domains: ['i.ibb.co'],  // Add the external image domain here
+    },
     env:{
         GITHUB_TOKEN : process.env.GITHUB_TOKEN
     }

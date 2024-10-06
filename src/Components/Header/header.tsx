@@ -27,7 +27,7 @@ const Header: FC=()=> {
     <nav className="navbar navbar-expand-lg navbar-light">
     <div className="container-fluid">
       <a className="navbar-brand" href="https://github.com/pranjalsingh03">
-        <Image src={logo} alt='logo' className='image-logo-header' />
+        <Image src="https://i.ibb.co/bb1zNvQ/logo1.png" alt='logo' className='image-logo-header' width={60} height={60} unoptimized/>
       </a>
       <div className='dark_mode'>
         <input
