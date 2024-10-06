@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // distDir: 'dist', // Ensure this matches your expectations
+    distDir: 'dist', // Ensure this matches your expectations
     webpack: (config, { isServer }) => {
         if (!isServer) {
             config.resolve.fallback.fs = false;
