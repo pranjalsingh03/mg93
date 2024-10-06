@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css"
 import Image from "next/image";
-import profile from "../../app/profile.jpg";
+import profile from "../../../public/profile.jpg";
 
 const HomeM = () => {
     return (
