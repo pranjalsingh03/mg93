@@ -15,11 +15,10 @@ const nextConfig = {
         return config;
     },
     images: {
-        domains: ['i.ibb.co'],  // Add the external image domain here
+        remotePatterns: [
+            { protocol: 'https', hostname: 'i.ibb.co' },
+        ],
     },
-    env:{
-        GITHUB_TOKEN : process.env.GITHUB_TOKEN
-    }
 };
 
 export default nextConfig;

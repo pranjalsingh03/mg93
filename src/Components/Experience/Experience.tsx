@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 
 function Experience() {
@@ -32,7 +33,7 @@ function Experience() {
     return (
         <div className=" mx-auto px-6 sm:px-8 md:px-16 lg:px-32 xl:px-48 py-16 text-gray-200">
             <div className="expi">02. I&apos;ve worked with</div>
-            <div className="flex mt-10">
+            <div className="experience-layout mt-10">
                 <div className="w-full sm:w-1/3 md:w-1/4 min-w-[140px] mb-8 sm:mb-0">
                     <ul className="li-desc">
                         {experiences.map((experience, index) => (
@@ -71,12 +72,10 @@ function Experience() {
                                         { title: "Frontend", color: "text-pink-300" },
                                         { title: "Backend", color: "text-green-300" }
                                     ];
-                                    let items: React.ReactNode[] = [];
-                                    let currentSection = null;
+                                    const items: React.ReactNode[] = [];
                                     desc.forEach((point, idx) => {
                                         const section = sections.find(s => s.title === point);
                                         if (section) {
-                                            currentSection = section;
                                             items.push(
                                                 <li key={point} className={`mt-4 mb-2 font-bold ${section.color} text-lg`}>{point}</li>
                                             );

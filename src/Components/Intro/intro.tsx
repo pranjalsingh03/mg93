@@ -83,13 +83,6 @@ const Intro: FC = () => {
                     </a>
                 </div>
             </div>
-            <div className="lbtSgG">
-                <div className="email__StyledLinkWrapper-sc-1fu3fru-0 dvseSq fade-enter-done">
-                    <a href="mailto:pranjalmagansingh9304@gmail.com" className="email__StyledEmailLink-sc-1fu3fru-1 gduzAh">
-                        pranjalmagansingh9304@gmail.com
-                    </a>
-                </div>
-            </div>
         </div>
     );
 };

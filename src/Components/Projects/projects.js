@@ -1,46 +1,42 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import "./project.css";
 
-const Projects = () => {
-    const [projects, setProjects] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const GitHub = process.env.GITHUB_TOKEN;
+const GITHUB_USERNAME = 'pranjalsingh03';
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const response = await axios.get('https://api.github.com/users/pranjalsingh03/repos', {
-                    headers: {
-                        Authorization: `Bearer ${GitHub}`,
-                    }
-                });
-                const selectedProjects = response.data.filter(project => (
-                    project.topics.includes("project")
-                ));
-                setProjects(selectedProjects);
-                setLoading(false);
-                console.log(selectedProjects);
-            } catch (error) {
-                console.error('Error fetching GitHub projects:', error);
-                setLoading(false);
-            }
-        };
-        if (GitHub) fetchProjects();  // Ensure GitHub token is available
-    }, [GitHub]);  // Add GitHub as a dependency here
+// Fetched at build time on the server. The public repo list needs no auth,
+// so no token is ever shipped to the browser.
+async function getProjects() {
+    try {
+        const response = await fetch(
+            `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
+            { headers: { Accept: 'application/vnd.github+json' } }
+        );
+
+        if (!response.ok) {
+            console.error(`GitHub API responded with ${response.status}`);
+            return [];
+        }
+
+        const repos = await response.json();
+        return repos.filter(repo => Array.isArray(repo.topics) && repo.topics.includes('project'));
+    } catch (error) {
+        console.error('Error fetching GitHub projects:', error);
+        return [];
+    }
+}
+
+const Projects = async () => {
+    const projects = await getProjects();
 
     return (
         <div className="main-content-area-box">
             <h3 className="gRQVKa" data-sr-id="3">
                 Some Things I&apos;ve Built
             </h3>
-            {loading ? (
-                <div className="loading-spinner">Loading...</div>
-            ) : projects.length > 0 ? (
+            {projects.length > 0 ? (
                 <div className="project-grid">
-                    {projects.map((project, index) => (
-                        <div key={index} className="project" data-sr-id="4">
+                    {projects.map((project) => (
+                        <div key={project.id} className="project" data-sr-id="4">
                             <div className="gWlhZI">
                                 <h4 className="dZTpBf">Featured Project</h4>
                                 <h5 className="jRnWTV">

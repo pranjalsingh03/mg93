@@ -32,8 +32,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/Components/Intro/intro.js",
-    "src/utils/github.js",
     "dist/types/**/*.ts"
   ],
   "exclude": [
