@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Pranjal Singh",
-  description: "Portfolio",
+  title: "Pranjal Singh — Full Stack Developer & Forward Deployed Engineer",
+  description: "Pranjal Singh — Full Stack Developer & Forward Deployed Engineer building web, mobile, AI systems, and bank-grade e-banking platforms from scratch.",
 };
 
 export default function RootLayout({
@@ -17,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

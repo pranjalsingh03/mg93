@@ -1,29 +1,40 @@
 import React from "react";
-import Intro from "../Components/Intro/intro";
-import Header from "../Components/Header/header";
-import HomeM from "../Components/Home/home"
-import "../app/globals.css"
+import Header from "@/Components/Header/header";
+import Intro from "@/Components/Intro/intro";
+import Marquee from "@/Components/Marquee/marquee";
+import About from "@/Components/About/about";
 import Lang from "@/Components/Languages/Lang";
-import ContactUs from "@/Components/Contactus/contact";
-import Footer from "@/Components/Footer/footer";
-import Projects from "@/Components/Projects/projects"
 import Experience from "@/Components/Experience/Experience";
+import Metrics from "@/Components/Metrics/metrics";
+import AiEval from "@/Components/AiEval/aiEval";
+import Projects from "@/Components/Projects/projects";
+import CaseStudies from "@/Components/CaseStudies/caseStudies";
+import Process from "@/Components/Process/process";
+import Philosophy from "@/Components/Philosophy/philosophy";
+import Footer from "@/Components/Footer/footer";
+import "../app/globals.css";
 
 export default function Home() {
   return (
     <>
-    <div id="home" className="intro route bg-image background">
-        <div id="stars" />
-        <div id="stars2" />
-        <div id="stars3" />
-      <Header/>
-      <Intro/>  </div>
-      <HomeM/>
-      <Experience/>
-      <Lang/>
-      <Projects/>
-      <ContactUs/>
-      <Footer/>
+      <div className="grid-bg" aria-hidden="true" />
+      <div className="wrap">
+        <Header />
+        <Intro />
+      </div>
+      <Marquee />
+      <div className="wrap">
+        <About />
+        <Lang />
+        <Experience />
+        <Metrics />
+        <AiEval />
+        <Projects />
+        <CaseStudies />
+        <Process />
+        <Philosophy />
+      </div>
+      <Footer />
     </>
   );
 }

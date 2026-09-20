@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    distDir: 'dist', // Ensure this matches your expectations
+    distDir: 'dist',
     webpack: (config, { isServer }) => {
         if (!isServer) {
             config.resolve.fallback.fs = false;
@@ -15,6 +15,7 @@ const nextConfig = {
         return config;
     },
     images: {
+        unoptimized: true,
         remotePatterns: [
             { protocol: 'https', hostname: 'i.ibb.co' },
         ],

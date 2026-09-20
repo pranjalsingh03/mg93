@@ -1,90 +1,96 @@
 "use client";
-import React, { useEffect, useRef, FC } from "react";
-import Image from 'next/image';
-import './intro.css';
-import "./stars.css";
-import Github from "../../app/github.svg";
-import Twitter from "../../app/twitter.svg";
-import Linkedin from "../../app/linkedin.svg";
-import Facebook from "../../app/facebook.svg";
-import Instagram from "../../app/instagram.svg";
-import Typed from 'typed.js';
+import React from "react";
 
-// Define the type for the ref
-type TypedSpanRef = HTMLSpanElement | null;
-
-const Intro: FC = () => {
-    const el = useRef<TypedSpanRef>(null);
-
-    useEffect(() => {
-        const typed = new Typed(el.current, {
-            strings: [
-                "Full stack developer",
-                "UI/UX Designer",
-                "Student"
-            ],
-            startDelay: 300,
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 100,
-            loop: true,
-        });
-
-        return () => {
-            typed.destroy();
-        };
-    }, []);
-
-    return (
-        <div className="main-box">
-            <div className="main-box-content-left">
-                <span className="first-name">Pranjal Singh</span>
-                <div className="about-user">
-                    <p className="about-me">Brings ideas to life with code.</p>
-                    <h1 className="typed-component">
-                        I am a <span className="typed-span" ref={el}></span>{" "}
-                    </h1>
-                    <div className="jsUDeb">
-                        <a href="https://github.com/pranjalsingh03">
-                            <Github alt="github" className="responsive-logo-intro" />
-                        </a>
-                        <a href="https://www.linkedin.com/in/pranjalsingh03/">
-                            <Linkedin alt="linkedin" className="responsive-logo-intro" />
-                        </a>
-                        <a href="https://twitter.com/pranjal_magan09">
-                            <Twitter alt="twitter" className="responsive-logo-intro" />
-                        </a>
-                    </div>
-                </div>
-                <div className="gXnnBS">
-                    <div className="email__StyledLinkWrapper-sc-1fu3fru-0 dvseSq fade-enter-done">
-                        <a href="https://github.com/pranjalsingh03">
-                            <Github alt="github" className="Image-logo imagelogo" />
-                        </a>
-                        <a href="https://www.linkedin.com/in/pranjalsingh03/">
-                            <Linkedin alt="linkedin" className="Image-logo imagelogo" />
-                        </a>
-                        <a href="https://www.instagram.com/sanatani_magan09/">
-                            <Instagram alt="instagram" className="Image-logo imagelogo" />
-                        </a>
-                        <a href="https://twitter.com/pranjal_magan09">
-                            <Twitter alt="twitter" className="Image-logo imagelogo" />
-                        </a>
-                        <a href="https://www.facebook.com/magan728">
-                            <Facebook alt="facebook" className="facebook-logo imagelogo" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div className="lbtSgG">
-                <div className="email__StyledLinkWrapper-sc-1fu3fru-0 dvseSq fade-enter-done">
-                    <a href="mailto:pranjalmagansingh9304@gmail.com" className="email__StyledEmailLink-sc-1fu3fru-1 gduzAh">
-                        pranjalmagansingh9304@gmail.com
-                    </a>
-                </div>
-            </div>
+const Intro = () => {
+  return (
+    <header className="hero" id="top">
+      <div>
+        <div className="eyebrow">
+          <span className="mono">FULL STACK DEVELOPER / FORWARD DEPLOYED ENGINEER</span>
+          <span className="line" aria-hidden="true" />
+          <span className="mono">INDIA / REMOTE</span>
         </div>
-    );
+        <h1>
+          Pranjal<br />
+          <span>Singh</span>
+        </h1>
+        <div className="hero-copy">
+          <p>
+            Full-stack developer and forward deployed engineer (<strong>React, Next.js, Flutter, Node.js</strong>). Built bank-grade e-banking platforms serving <strong>100,000+ (1 Lakh+) users</strong>, logged <strong>900+ coding hours on WakaTime (Top 4% of 5 Lakh+ developers worldwide)</strong>, and maintained a <strong>483-day active GitHub streak</strong>.
+          </p>
+          <div className="hero-index">01 / 08</div>
+        </div>
+        <div className="hero-actions">
+          <a className="btn primary" href="#work">
+            Explore my work ↗
+          </a>
+          <a className="btn" href="#contact">
+            Let&apos;s talk ↗
+          </a>
+        </div>
+        <div className="hero-facts">
+          <div className="fact">
+            <b>1 Lakh+ Users</b>
+            <span>Bank-Grade E-Banking</span>
+          </div>
+          <div className="fact">
+            <b>900+ Hours</b>
+            <span>Top 4% on WakaTime</span>
+          </div>
+          <div className="fact">
+            <b>483-Day Streak</b>
+            <span>Active GitHub Shipping</span>
+          </div>
+          <div className="fact">
+            <b>Forward Deployed</b>
+            <span>End-to-End Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="hero-visual" aria-label="System Telemetry & Architecture Visual">
+        <div className="hero-frame" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "28px", background: "linear-gradient(145deg, #0e1017, #07080b)", borderColor: "#282d3d" }}>
+          {/* Top Status Bar */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #1e2433", paddingBottom: "14px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--lime)", boxShadow: "0 0 12px var(--lime)" }} />
+              <span className="mono" style={{ color: "#d5d5cf", fontSize: "10px", letterSpacing: "0.12em" }}>SYSTEM TELEMETRY</span>
+            </div>
+            <span className="mono" style={{ color: "var(--lime)", fontSize: "9px" }}>ONLINE / ACTIVE</span>
+          </div>
+
+          {/* Terminal / Telemetry Lines */}
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", lineHeight: "1.9", color: "#a0a098", margin: "20px 0" }}>
+            <div style={{ color: "#555", marginBottom: "6px" }}>ps://forward-deployed-engineer</div>
+            <div><span style={{ color: "var(--lime)" }}>✓</span> Scale: <strong style={{ color: "#fff" }}>100,000+ (1 Lakh+) Users</strong></div>
+            <div><span style={{ color: "var(--lime)" }}>✓</span> Security: <strong style={{ color: "#fff" }}>Dynamic RBAC &amp; Bank Compliance</strong></div>
+            <div><span style={{ color: "var(--lime)" }}>✓</span> Benchmark: <strong style={{ color: "#fff" }}>900+ Hrs (Top 4% WakaTime)</strong></div>
+            <div><span style={{ color: "var(--lime)" }}>✓</span> Activity: <strong style={{ color: "#fff" }}>483-Day Continuous GitHub Streak</strong></div>
+            <div><span style={{ color: "var(--lime)" }}>✓</span> Automations: <strong style={{ color: "#fff" }}>Apify &amp; Apollo.io Pipelines</strong></div>
+          </div>
+
+          {/* Tech Stack Chips */}
+          <div style={{ borderTop: "1px solid #1e2433", paddingTop: "16px" }}>
+            <div className="mono" style={{ color: "#666", fontSize: "9px", marginBottom: "10px" }}>PRIMARY ARCHITECTURE</div>
+            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+              <span className="chip" style={{ background: "#121622", borderColor: "#252d42", color: "var(--cyan)" }}>React</span>
+              <span className="chip" style={{ background: "#121622", borderColor: "#252d42", color: "var(--lime)" }}>Next.js</span>
+              <span className="chip" style={{ background: "#121622", borderColor: "#252d42", color: "var(--blue)" }}>Flutter</span>
+              <span className="chip" style={{ background: "#121622", borderColor: "#252d42", color: "var(--violet)" }}>Node.js</span>
+              <span className="chip" style={{ background: "#121622", borderColor: "#252d42", color: "var(--red)" }}>WebRTC</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="visual-label">
+          BUILD<br />
+          SECURE<br />
+          DEPLOY
+        </div>
+        <div className="visual-coords">26°N / 80°E · LPU</div>
+      </div>
+    </header>
+  );
 };
 
 export default Intro;

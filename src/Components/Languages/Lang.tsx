@@ -1,63 +1,118 @@
 "use client";
-import React from 'react';
-import './Lang.css';
-import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaPython, FaJs, FaJava, FaPhp, FaGitAlt, FaGithub, FaDocker, FaCloud, FaAws, FaGoogle, FaMicrosoft } from 'react-icons/fa';
-import { SiDart, SiTypescript, SiCplusplus, SiExpress, SiAngular, SiFlutter, SiNextdotjs, SiGetx, SiCloudflare, SiVercel, SiPostgresql, SiMongodb, SiTerraform, SiKubernetes, SiJenkins } from 'react-icons/si';
+import React from "react";
 
 const Lang = () => {
-  // Skill icon map
-  const skillIcons: { [key: string]: JSX.Element } = {
-    'JavaScript': <FaJs className="text-yellow-400" />, 'HTML': <FaHtml5 className="text-orange-500" />, 'CSS': <FaCss3Alt className="text-blue-400" />, 'Dart': <SiDart className="text-cyan-400" />, 'Node.js': <FaNodeJs className="text-green-500" />, 'Python': <FaPython className="text-blue-300" />, 'C/C++': <SiCplusplus className="text-blue-200" />, 'Java': <FaJava className="text-red-400" />, 'TypeScript': <SiTypescript className="text-blue-500" />, 'PHP': <FaPhp className="text-indigo-400" />,
-    'React': <FaReact className="text-cyan-400" />, 'Express.js': <SiExpress className="text-gray-200" />, 'Angular': <SiAngular className="text-red-500" />, 'REST API': <FaCloud className="text-teal-400" />, 'Flutter': <SiFlutter className="text-blue-400" />, 'Next.js': <SiNextdotjs className="text-black dark:text-white" />, 'GetX': <SiGetx className="text-pink-400" />,
-    'Git': <FaGitAlt className="text-orange-400" />, 'GitHub': <FaGithub className="text-gray-200" />, 'Docker': <FaDocker className="text-blue-400" />, 'Cloudflare': <SiCloudflare className="text-yellow-400" />, 'Vercel': <SiVercel className="text-black dark:text-white" />, 'PostgreSQL': <SiPostgresql className="text-blue-500" />, 'MongoDB': <SiMongodb className="text-green-400" />, 'Jenkins': <SiJenkins className="text-red-400" />, 'Kubernetes': <SiKubernetes className="text-blue-400" />, 'Terraform': <SiTerraform className="text-purple-400" />,
-    'AWS': <FaAws className="text-yellow-400" />, 'GCP': <FaGoogle className="text-blue-400" />, 'Azure': <FaMicrosoft className="text-blue-500" />, 'Github Actions': <FaGithub className="text-gray-200" />, 'Cloud/DevOps': <FaCloud className="text-teal-400" />
-  };
-
-  // Skill groups
-  const skillGroups = [
-    {
-      title: 'Languages',
-      color: 'from-yellow-400 to-orange-400',
-      skills: ['JavaScript', 'HTML', 'CSS', 'Dart', 'Node.js', 'Python', 'C/C++', 'Java', 'TypeScript', 'PHP']
-    },
-    {
-      title: 'Frameworks',
-      color: 'from-cyan-400 to-blue-400',
-      skills: ['React', 'Express.js', 'Angular', 'REST API', 'Flutter', 'Next.js', 'GetX']
-    },
-    {
-      title: 'Tools',
-      color: 'from-pink-400 to-yellow-300',
-      skills: ['Git', 'GitHub', 'Docker', 'Cloudflare', 'Vercel', 'PostgreSQL', 'MongoDB', 'Jenkins', 'Kubernetes', 'Terraform']
-    },
-    {
-      title: 'Cloud/DevOps',
-      color: 'from-green-400 to-blue-400',
-      skills: ['AWS', 'GCP', 'Azure', 'Github Actions']
-    }
-  ];
-
   return (
-    <div className="container py-12">
-      <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#181c2b] to-[#232b36] rounded-3xl shadow-2xl p-8">
-        <h2 className="text-4xl font-bold text-center mb-8 text-teal-300 tracking-tight">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillGroups.map(group => (
-            <div key={group.title} className={`rounded-2xl p-6 bg-gradient-to-tr ${group.color} bg-opacity-10 shadow-lg`}> 
-              <h3 className="text-2xl font-semibold mb-4 text-white drop-shadow">{group.title}</h3>
-              <div className="flex flex-wrap gap-3">
-                {group.skills.map(skill => (
-                  <span key={skill} className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#232b36] text-white font-medium shadow hover:scale-105 transition-transform text-base">
-                    {skillIcons[skill] || null}
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+    <section className="section" id="skills">
+      <div className="section-head">
+        <div>
+          <div className="mono">02 / Capabilities &amp; Stack</div>
+          <h2>
+            What I<br />
+            <span className="outline">build.</span>
+          </h2>
         </div>
+        <p className="section-intro">
+          Production stack across full-stack engineering, mobile, AI systems, workflow automations, and cloud infrastructure.
+        </p>
       </div>
-    </div>
+      <div className="skills">
+        <article className="skill">
+          <span className="skill-num">01 / CORE STACK</span>
+          <span className="skill-icon" aria-hidden="true">◫</span>
+          <h3>Frontend &amp; Full Stack Architecture.</h3>
+          <p>
+            Production-grade web interfaces built with React, Next.js (SSR/ISR), TypeScript, and Node.js for high performance and accessibility.
+          </p>
+          <div className="skill-stack">
+            <span className="chip">React</span>
+            <span className="chip">Next.js</span>
+            <span className="chip">TypeScript</span>
+            <span className="chip">Node.js</span>
+            <span className="chip">Express.js</span>
+          </div>
+        </article>
+
+        <article className="skill">
+          <span className="skill-num">02 / BACKEND &amp; REALTIME</span>
+          <span className="skill-icon" aria-hidden="true">⌘</span>
+          <h3>APIs, WebSockets &amp; Real-Time Systems.</h3>
+          <p>
+            RESTful APIs, tRPC, WebSockets, and WebRTC real-time collaborative pipelines backed by PostgreSQL and MongoDB.
+          </p>
+          <div className="skill-stack">
+            <span className="chip">REST</span>
+            <span className="chip">tRPC</span>
+            <span className="chip">WebSockets</span>
+            <span className="chip">WebRTC</span>
+            <span className="chip">PostgreSQL</span>
+            <span className="chip">MongoDB</span>
+          </div>
+        </article>
+
+        <article className="skill">
+          <span className="skill-num">03 / MOBILE DEVELOPMENT</span>
+          <span className="skill-icon" aria-hidden="true">▯</span>
+          <h3>Cross-Platform Mobile Apps.</h3>
+          <p>
+            Native-feeling Android and cross-platform mobile products in Flutter &amp; Dart with real-time sync and agent UIs.
+          </p>
+          <div className="skill-stack">
+            <span className="chip">Flutter</span>
+            <span className="chip">Dart</span>
+            <span className="chip">Android</span>
+          </div>
+        </article>
+
+        <article className="skill">
+          <span className="skill-num">04 / AUTOMATIONS &amp; SCRAPING</span>
+          <span className="skill-icon" aria-hidden="true">⌁</span>
+          <h3>Workflow &amp; Data Automations.</h3>
+          <p>
+            Building automated lead pipelines, web scraping actors, and audience enrichment workflows using tools like Apify and Apollo.io.
+          </p>
+          <div className="skill-stack">
+            <span className="chip">Apify</span>
+            <span className="chip">Apollo.io</span>
+            <span className="chip">Web Scraping</span>
+            <span className="chip">Lead Extraction</span>
+            <span className="chip">Automations</span>
+          </div>
+        </article>
+
+        <article className="skill">
+          <span className="skill-num">05 / AI &amp; MULTIMODAL</span>
+          <span className="skill-icon" aria-hidden="true">✦</span>
+          <h3>AI Products &amp; Agent Middleware.</h3>
+          <p>
+            Integrating OpenAI, LLM APIs, speech-to-text, PDF understanding, and real-time meeting task extractors into active user workflows.
+          </p>
+          <div className="skill-stack">
+            <span className="chip">OpenAI</span>
+            <span className="chip">LLM APIs</span>
+            <span className="chip">Multimodal</span>
+            <span className="chip">WebSockets</span>
+          </div>
+        </article>
+
+        <article className="skill">
+          <span className="skill-num">06 / DEVOPS &amp; TOOLS</span>
+          <span className="skill-icon" aria-hidden="true">△</span>
+          <h3>Cloud Infra &amp; Engineering Utilities.</h3>
+          <p>
+            Docker containerization, GitHub Actions CI/CD, AWS, GCP, Azure, Terraform, plus Git, Postman, Python, and C++.
+          </p>
+          <div className="skill-stack">
+            <span className="chip">Docker</span>
+            <span className="chip">GitHub Actions</span>
+            <span className="chip">AWS</span>
+            <span className="chip">GCP</span>
+            <span className="chip">Azure</span>
+            <span className="chip">Terraform</span>
+          </div>
+        </article>
+      </div>
+    </section>
   );
 };
 
