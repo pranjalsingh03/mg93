@@ -26,7 +26,7 @@ const allProjects: ProjectItem[] = [
     num: "01 / AD TECH & AUTOMATIONS",
     categoryTag: "AD TECH",
     categories: ["Mobile", "Web", "AI", "Automations"],
-    title: "Onecast",
+    title: "ONECAST — Three Platforms. One Tap.",
     subtitle: "Cross-Platform Campaign & Workflow Automation Manager",
     description:
       "A unified multi-channel ad management and automation platform designed to launch and monitor ad campaigns across Google Ads, Meta, and LinkedIn from a single flow — eliminating expensive ₹80,000/month agency retainers.",
@@ -37,18 +37,18 @@ const allProjects: ProjectItem[] = [
       "Consolidated multi-network analytics into a single real-time reporting dashboard.",
     ],
     tags: ["Flutter", "Web", "Apify Automations", "Apollo.io", "Google Ads API", "Meta API", "LinkedIn API"],
-    linkText: "CROSS-PLATFORM CAMPAIGN & AUTOMATIONS ↗",
+    linkText: "LIVE: ONECAST.PRANJALSINGH.IN ↗",
     gridSpan: "span 7",
     minHeight: "620px",
     bgGradient: "radial-gradient(circle at 72% 22%, #1d6672 0, #0c2227 23%, #050909 65%)",
-    externalUrl: "https://github.com/pranjalsingh03/onecast",
+    externalUrl: "https://onecast.pranjalsingh.in/",
   },
   {
-    id: "meeting-assistant",
+    id: "taskflow",
     num: "02 / AI & WORKFLOW AUTOMATION",
     categoryTag: "AI SAAS",
     categories: ["AI", "Mobile", "Web", "Automations"],
-    title: "AI Meeting & Task Automation Assistant",
+    title: "TaskFlow AI - From Meeting to Done in Minutes",
     subtitle: "Real-time Meeting Action Extraction & Sync",
     description:
       "An intelligent workflow assistant that listens to live meetings, automatically extracts action items, assignees, deadlines, and priorities using OpenAI & WebSockets, and syncs them directly into mobile apps.",
@@ -58,8 +58,8 @@ const allProjects: ProjectItem[] = [
       "Automated task creation, priority tagging, and instant mobile notification sync.",
     ],
     tags: ["React.js", "OpenAI", "WebSockets", "Task Automation", "Flutter"],
-    linkText: "LIVE: TASK.PRANJALVERSE.TECH ↗",
-    externalUrl: "https://task.pranjalverse.tech",
+    linkText: "LIVE: TASK.PRANJALSINGH.IN ↗",
+    externalUrl: "https://task.pranjalsingh.in/",
     gridSpan: "span 5",
     minHeight: "620px",
     bgGradient: "radial-gradient(circle at 70% 25%, #c7c7c7 0, #4b4b4b 18%, #151515 57%)",
@@ -90,7 +90,7 @@ const allProjects: ProjectItem[] = [
     num: "04 / AI × EDTECH PLATFORM",
     categoryTag: "AI EDTECH",
     categories: ["AI", "Web", "Automations"],
-    title: "OmniTutor Learning System",
+    title: "OmniTutor — Real-Time AI Tutoring Platform",
     subtitle: "Real-time AI Tutoring & Automated Progress Tracking",
     description:
       "A full-stack Next.js tutoring platform combining real-time AI voice, video, and interactive learning sessions with automated weekly progress reports and personalized study plan generation.",
@@ -100,11 +100,11 @@ const allProjects: ProjectItem[] = [
       "Boosted 30-day user retention by 35% through weekly feedback-driven iterations.",
     ],
     tags: ["Next.js", "WebRTC", "WebSockets", "AI Middleware", "Automated Study Plans"],
-    linkText: "800+ ACTIVE LEARNERS · VIEW PROJECT ↗",
+    linkText: "LIVE: OMNITUTOR.LIVE ↗",
     gridSpan: "span 6",
     minHeight: "540px",
     bgGradient: "radial-gradient(circle at 70% 25%, #19524e 0, #10211f 30%, #080c0c 70%)",
-    externalUrl: "https://github.com/pranjalsingh03",
+    externalUrl: "https://omnitutor.live/",
   },
   {
     id: "interview-room",
@@ -147,26 +147,6 @@ const allProjects: ProjectItem[] = [
     bgGradient: "radial-gradient(circle at 70% 25%, #80613b 0, #292015 30%, #0d0b08 70%)",
     externalUrl: "https://github.com/pranjalsingh03",
   },
-  {
-    id: "rate-guard",
-    num: "07 / OPEN SOURCE NPM PACKAGE",
-    categoryTag: "NPM PACKAGE",
-    categories: ["Tools", "Web"],
-    title: "@pranjal/rate-guard",
-    subtitle: "LRU Caching & High-Performance Rate Limiter",
-    description:
-      "Published open-source npm package implementing memory-efficient LRU (Least Recently Used) caching and token-bucket rate limiting algorithms for Node.js & Express servers.",
-    highlights: [
-      "Protects backend REST/GraphQL APIs against DDoS spikes and abuse with sub-millisecond check latency.",
-      "Zero third-party runtime dependencies, written in strict TypeScript.",
-    ],
-    tags: ["npm Package", "TypeScript", "LRU Cache", "Rate Limiting", "API Security"],
-    linkText: "PUBLISHED NPM PACKAGE ↗",
-    gridSpan: "span 6",
-    minHeight: "450px",
-    bgGradient: "radial-gradient(circle at 70% 25%, #7b4b31 0, #271710 30%, #0d0a08 70%)",
-    externalUrl: "https://www.npmjs.com/package/@pranjal/rate-guard",
-  },
 ];
 
 const categoriesList: ProjectCategory[] = ["All", "Web", "Mobile", "AI", "Fintech", "Automations", "Tools"];
@@ -187,7 +167,7 @@ const Projects = () => {
           <h2>Projects</h2>
         </div>
         <p className="section-intro">
-          Selected production applications, workflow &amp; web automations (Apify, Apollo.io), open-source npm packages, mobile apps, and bank-grade systems. Click any card to open its link.
+          Selected production applications, workflow &amp; web automations (Apify, Apollo.io), mobile apps, and bank-grade systems. Click any card to open its live site.
         </p>
       </div>
 
@@ -257,9 +237,9 @@ const Projects = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="project-card-link"
-          style={{ gridColumn: "span 6" }}
+          style={{ gridColumn: "span 12" }}
         >
-          <article className="project more-project" style={{ minHeight: "450px" }}>
+          <article className="project more-project" style={{ minHeight: "220px" }}>
             <div>
               <div className="plus">＋</div>
               <strong>More in the lab</strong>
