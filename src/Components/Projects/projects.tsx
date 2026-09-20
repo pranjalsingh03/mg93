@@ -69,7 +69,7 @@ const allProjects: ProjectItem[] = [
     num: "03 / FINTECH & ENTERPRISE SECURITY",
     categoryTag: "FINTECH",
     categories: ["Fintech", "Web", "Mobile"],
-    title: "BIAPay E-Banking Platforms",
+    title: "BIAPAY – Payment Gateway & Payment Integrator by B.I.A.",
     subtitle: "Bank-Grade E-Banking & Security Engine Built from Scratch",
     description:
       "Enterprise e-banking platforms designed and built from scratch for banking partners — serving 100,000+ (1 Lakh+) users — featuring strict security standards, permission workflows, and a custom dynamic RBAC engine.",
@@ -79,11 +79,11 @@ const allProjects: ProjectItem[] = [
       "Enforced audit-ready security validations, 2FA authenticators, KYC processing, and 85%+ Jest test coverage.",
     ],
     tags: ["Built from Scratch", "1 Lakh+ Users", "React", "Flutter", "Dynamic RBAC", "Banking Security"],
-    linkText: "1 LAKH+ USERS · BANKING SECURITY ↗",
+    linkText: "LIVE: BIAPAY.NET ↗",
     gridSpan: "span 6",
     minHeight: "540px",
     bgGradient: "radial-gradient(circle at 65% 25%, #6f52bd 0, #20143b 25%, #0b0913 67%)",
-    externalUrl: "https://github.com/pranjalsingh03",
+    externalUrl: "https://biapay.net/",
   },
   {
     id: "omnitutor",
@@ -144,7 +144,7 @@ const allProjects: ProjectItem[] = [
     linkText: "FOUNDING ENGINEER · CASE STUDY ↗",
     gridSpan: "span 6",
     minHeight: "540px",
-    bgGradient: "radial-gradient(circle at 70% 25%, #80613b 0, #292015 30%, #0d0b08 70%)",
+    bgGradient: "radial-gradient(circle at 80% 25%, #80613b 0, #292015 30%, #0d0b08 70%)",
     externalUrl: "https://github.com/pranjalsingh03",
   },
 ];
