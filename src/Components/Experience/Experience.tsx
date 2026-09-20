@@ -19,7 +19,7 @@ const Experience = () => {
           <span>PERIOD / FOCUS</span>
         </div>
 
-        <article className="exp">
+        <article className="exp exp-biapay">
           <div className="exp-date">
             <span className="exp-dot" aria-hidden="true" />
             NOV 2025 — PRESENT<br />
@@ -45,7 +45,7 @@ const Experience = () => {
           </div>
         </article>
 
-        <article className="exp">
+        <article className="exp exp-omnitutor">
           <div className="exp-date">
             <span className="exp-dot" aria-hidden="true" />
             MAY 2025 — OCT 2025
@@ -58,8 +58,8 @@ const Experience = () => {
             </p>
             <ul>
               <li>Architected full-stack Next.js application (SSR, ISR, API routes) integrating real-time AI voice, video, and interactive content via WebRTC, WebSockets, and AI middleware.</li>
-              <li>Scaled to 800+ active learners within 15 days of launch.</li>
-              <li>Improved 30-day user retention by 35% by iterating weekly on direct user feedback.</li>
+              <li>Scaled to <strong>800+ active learners</strong> within 15 days of launch.</li>
+              <li>Improved 30-day user retention by <strong>35%</strong> by iterating weekly on direct user feedback.</li>
             </ul>
           </div>
           <div className="exp-side">
@@ -69,7 +69,7 @@ const Experience = () => {
           </div>
         </article>
 
-        <article className="exp">
+        <article className="exp exp-sheshya">
           <div className="exp-date">
             <span className="exp-dot" aria-hidden="true" />
             JUL 2024 — APR 2025
@@ -84,7 +84,7 @@ const Experience = () => {
               <li>Enabled low-latency, self-updating agent interfaces with real-time data sync by engineering WebSocket/REST pipelines and integrating backend APIs into the Flutter frontend.</li>
               <li>Powered intelligent assistant simulations by integrating multimodal features — speech-to-text, PDF understanding, and location-based context.</li>
               <li>Improved navigation efficiency and accessibility across 50+ web pages with a library of reusable React components.</li>
-              <li>Reduced average API response times by designing and optimizing 100+ RESTful endpoints with query optimization and caching, containerizing 10+ services with Docker for consistency across environments.</li>
+              <li>Reduced average API response times by <strong>30%</strong> by designing and optimizing 100+ RESTful endpoints with query optimization and containerizing 10+ services with Docker.</li>
             </ul>
           </div>
           <div className="exp-side">

@@ -17,7 +17,7 @@ const Lang = () => {
         </p>
       </div>
       <div className="skills">
-        <article className="skill">
+        <article className="skill skill-core">
           <span className="skill-num">01 / CORE STACK</span>
           <span className="skill-icon" aria-hidden="true">◫</span>
           <h3>Frontend &amp; Full Stack Architecture.</h3>
@@ -33,7 +33,7 @@ const Lang = () => {
           </div>
         </article>
 
-        <article className="skill">
+        <article className="skill skill-backend">
           <span className="skill-num">02 / BACKEND &amp; REALTIME</span>
           <span className="skill-icon" aria-hidden="true">⌘</span>
           <h3>APIs, WebSockets &amp; Real-Time Systems.</h3>
@@ -50,7 +50,7 @@ const Lang = () => {
           </div>
         </article>
 
-        <article className="skill">
+        <article className="skill skill-mobile">
           <span className="skill-num">03 / MOBILE DEVELOPMENT</span>
           <span className="skill-icon" aria-hidden="true">▯</span>
           <h3>Cross-Platform Mobile Apps.</h3>
@@ -64,7 +64,7 @@ const Lang = () => {
           </div>
         </article>
 
-        <article className="skill">
+        <article className="skill skill-auto">
           <span className="skill-num">04 / AUTOMATIONS &amp; SCRAPING</span>
           <span className="skill-icon" aria-hidden="true">⌁</span>
           <h3>Workflow &amp; Data Automations.</h3>
@@ -80,7 +80,7 @@ const Lang = () => {
           </div>
         </article>
 
-        <article className="skill">
+        <article className="skill skill-ai">
           <span className="skill-num">05 / AI &amp; MULTIMODAL</span>
           <span className="skill-icon" aria-hidden="true">✦</span>
           <h3>AI Products &amp; Agent Middleware.</h3>
@@ -95,7 +95,7 @@ const Lang = () => {
           </div>
         </article>
 
-        <article className="skill">
+        <article className="skill skill-devops">
           <span className="skill-num">06 / DEVOPS &amp; TOOLS</span>
           <span className="skill-icon" aria-hidden="true">△</span>
           <h3>Cloud Infra &amp; Engineering Utilities.</h3>

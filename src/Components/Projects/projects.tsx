@@ -193,16 +193,15 @@ const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="project-card-link"
-            style={{ gridColumn: project.gridSpan }}
+            style={
+              {
+                "--card-span": project.gridSpan,
+                "--card-bg": project.bgGradient,
+                "--card-min-height": project.minHeight || "510px",
+              } as React.CSSProperties
+            }
           >
-            <article
-              className="project"
-              style={{
-                background: project.bgGradient,
-                minHeight: project.minHeight || undefined,
-                height: "100%",
-              }}
-            >
+            <article className="project">
               <span className="project-number">{project.num}</span>
               <div className="project-preview" aria-hidden="true">
                 <div className="preview-lines" />
@@ -210,11 +209,9 @@ const Projects = () => {
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>
-                <p style={{ color: "var(--lime)", fontSize: "11px", fontFamily: "'DM Mono', monospace", marginBottom: "8px" }}>
-                  {project.subtitle}
-                </p>
-                <p>{project.description}</p>
-                <ul style={{ paddingLeft: "16px", margin: "0 0 14px", color: "#aaa9a2", fontSize: "11px", lineHeight: "1.7" }}>
+                <p className="project-subtitle">{project.subtitle}</p>
+                <p className="project-desc">{project.description}</p>
+                <ul className="project-highlights">
                   {project.highlights.map((highlight, idx) => (
                     <li key={idx}>{highlight}</li>
                   ))}
@@ -226,7 +223,9 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className="project-link">{project.linkText}</div>
+                <div className="project-link">
+                  <span>{project.linkText}</span>
+                </div>
               </div>
             </article>
           </a>
@@ -237,9 +236,15 @@ const Projects = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="project-card-link"
-          style={{ gridColumn: "span 12" }}
+          style={
+            {
+              "--card-span": "span 12",
+              "--card-bg": "#0b0b0b",
+              "--card-min-height": "220px",
+            } as React.CSSProperties
+          }
         >
-          <article className="project more-project" style={{ minHeight: "220px" }}>
+          <article className="project more-project">
             <div>
               <div className="plus">＋</div>
               <strong>More in the lab</strong>

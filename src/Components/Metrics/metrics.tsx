@@ -17,19 +17,19 @@ const Metrics = () => {
         </p>
       </div>
       <div className="metrics">
-        <div className="metric">
+        <div className="metric metric-users">
           <b>1 Lakh+</b>
           <span>Users served on e-banking platforms built from scratch</span>
         </div>
-        <div className="metric">
+        <div className="metric metric-hours">
           <b>900+ Hrs</b>
           <span>Coded on WakaTime (Top 4% of 5 Lakh+ developers worldwide)</span>
         </div>
-        <div className="metric">
+        <div className="metric metric-streak">
           <b>483 Days</b>
           <span>Continuous active GitHub streak shipping code daily</span>
         </div>
-        <div className="metric">
+        <div className="metric metric-learners">
           <b>800+</b>
           <span>Active learners reached in 15 days on OmniTutor (+35% retention)</span>
         </div>
