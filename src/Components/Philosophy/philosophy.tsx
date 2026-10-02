@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import ScrollWords from "@/Components/Motion/scrollWords";
 
 const Philosophy = () => {
   return (
@@ -20,7 +21,7 @@ const Philosophy = () => {
         <div className="quote-box">
           <div className="mono">A line I keep close</div>
           <div className="quote">“कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।”</div>
-          <p>Focus on the work, the craft and the action in front of you. Build something useful, learn from it and keep moving.</p>
+          <ScrollWords text="Focus on the work, the craft and the action in front of you." highlight="Build something useful, learn from it and keep moving." />
         </div>
         <div className="principles">
           <div className="principle">

@@ -1,34 +1,67 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+// Each line of the name slides up from behind a mask
+const MaskLine = ({ children, delay, className }: { children: React.ReactNode; delay: number; className?: string }) => (
+  <span className="line-mask">
+    <motion.span
+      className={`line-inner ${className ?? ""}`}
+      initial={{ y: "105%" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1.1, delay, ease }}
+    >
+      {children}
+    </motion.span>
+  </span>
+);
+
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.9, delay, ease },
+});
 
 const Intro = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  // As the hero scrolls away, the copy drifts up and the visual lags behind (parallax)
+  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"]);
+  const visualY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const blur = useTransform(scrollYProgress, [0, 0.75], ["blur(0px)", "blur(6px)"]);
+
   return (
-    <header className="hero" id="top">
-      <div>
-        <div className="eyebrow">
+    <header className="hero" id="top" ref={ref}>
+      <motion.div style={{ y: copyY, opacity: fade, filter: blur }}>
+        <motion.div className="eyebrow" {...fadeUp(0.1)}>
           <span className="mono">FULL STACK DEVELOPER / FORWARD DEPLOYED ENGINEER</span>
           <span className="line" aria-hidden="true" />
           <span className="mono">INDIA / REMOTE</span>
-        </div>
+        </motion.div>
         <h1>
-          Pranjal<br />
-          <span>Singh</span>
+          <MaskLine delay={0.2}>Pranjal</MaskLine>
+          <MaskLine delay={0.35} className="hero-outline">
+            Singh
+          </MaskLine>
         </h1>
-        <div className="hero-copy">
+        <motion.div className="hero-copy" {...fadeUp(0.6)}>
           <p>
             Full-stack developer and forward deployed engineer (<strong>React, Next.js, Flutter, Node.js</strong>). Built bank-grade e-banking platforms serving <strong>100,000+ (1 Lakh+) users</strong>, logged <strong>900+ coding hours on WakaTime (Top 4% of 5 Lakh+ developers worldwide)</strong>, and maintained a <strong>483-day active GitHub streak</strong>.
           </p>
           <div className="hero-index">01 / 08</div>
-        </div>
-        <div className="hero-actions">
+        </motion.div>
+        <motion.div className="hero-actions" {...fadeUp(0.75)}>
           <a className="btn primary" href="#work">
             Explore my work ↗
           </a>
           <a className="btn" href="#contact">
             Let&apos;s talk ↗
           </a>
-        </div>
-        <div className="hero-facts">
+        </motion.div>
+        <motion.div className="hero-facts" {...fadeUp(0.9)}>
           <div className="fact">
             <b>1 Lakh+ Users</b>
             <span>Bank-Grade E-Banking</span>
@@ -45,10 +78,17 @@ const Intro = () => {
             <b>Forward Deployed</b>
             <span>End-to-End Systems</span>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="hero-visual" aria-label="System Telemetry & Architecture Visual">
+      <motion.div
+        className="hero-visual"
+        aria-label="System Telemetry & Architecture Visual"
+        initial={{ opacity: 0, scale: 0.94, rotateX: 8 }}
+        animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+        transition={{ duration: 1.3, delay: 0.45, ease }}
+        style={{ y: visualY }}
+      >
         <div className="hero-frame" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "28px", background: "linear-gradient(145deg, #0e1017, #07080b)", borderColor: "#282d3d" }}>
           {/* Top Status Bar */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #1e2433", paddingBottom: "14px" }}>
@@ -88,7 +128,7 @@ const Intro = () => {
           DEPLOY
         </div>
         <div className="visual-coords">26°N / 80°E · LPU</div>
-      </div>
+      </motion.div>
     </header>
   );
 };

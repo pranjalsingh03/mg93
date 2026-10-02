@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 type ProjectCategory = "All" | "Web" | "Mobile" | "AI" | "Fintech" | "Automations" | "Tools";
 
@@ -149,6 +150,40 @@ const allProjects: ProjectItem[] = [
   },
 ];
 
+// Card whose entrance is scrubbed by scroll: it scales, tilts and fades in as it
+// rises into view (and reverses on the way back up). Children get a parallax value.
+const ScrubLink = ({
+  href,
+  style,
+  children,
+}: {
+  href: string;
+  style: React.CSSProperties;
+  children: (parallax: MotionValue<string>) => React.ReactNode;
+}) => {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const { scrollYProgress: enter } = useScroll({ target: ref, offset: ["start end", "start 55%"] });
+  const { scrollYProgress: pass } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const scale = useTransform(enter, [0, 1], [0.86, 1]);
+  const opacity = useTransform(enter, [0, 1], [0.15, 1]);
+  const rotateX = useTransform(enter, [0, 1], [14, 0]);
+  const y = useTransform(enter, [0, 1], [90, 0]);
+  const parallax = useTransform(pass, [0, 1], ["-10%", "10%"]);
+
+  return (
+    <motion.a
+      ref={ref}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-card-link"
+      style={{ ...style, scale, opacity, rotateX, y, transformPerspective: 1200 }}
+    >
+      {children(parallax)}
+    </motion.a>
+  );
+};
+
 const categoriesList: ProjectCategory[] = ["All", "Web", "Mobile", "AI", "Fintech", "Automations", "Tools"];
 
 const Projects = () => {
@@ -187,12 +222,9 @@ const Projects = () => {
 
       <div className="projects">
         {filteredProjects.map((project) => (
-          <a
+          <ScrubLink
             key={project.id}
             href={project.externalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card-link"
             style={
               {
                 "--card-span": project.gridSpan,
@@ -201,41 +233,40 @@ const Projects = () => {
               } as React.CSSProperties
             }
           >
-            <article className="project">
-              <span className="project-number">{project.num}</span>
-              <div className="project-preview" aria-hidden="true">
-                <div className="preview-lines" />
-                <div className="preview-dot" />
-              </div>
-              <div className="project-content">
-                <h3>{project.title}</h3>
-                <p className="project-subtitle">{project.subtitle}</p>
-                <p className="project-desc">{project.description}</p>
-                <ul className="project-highlights">
-                  {project.highlights.map((highlight, idx) => (
-                    <li key={idx}>{highlight}</li>
-                  ))}
-                </ul>
-                <div className="tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">
-                      {tag}
-                    </span>
-                  ))}
+            {(parallax) => (
+              <article className="project">
+                <span className="project-number">{project.num}</span>
+                <motion.div className="project-preview" aria-hidden="true" style={{ y: parallax }}>
+                  <div className="preview-lines" />
+                  <div className="preview-dot" />
+                </motion.div>
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p className="project-subtitle">{project.subtitle}</p>
+                  <p className="project-desc">{project.description}</p>
+                  <ul className="project-highlights">
+                    {project.highlights.map((highlight, idx) => (
+                      <li key={idx}>{highlight}</li>
+                    ))}
+                  </ul>
+                  <div className="tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="project-link">
+                    <span>{project.linkText}</span>
+                  </div>
                 </div>
-                <div className="project-link">
-                  <span>{project.linkText}</span>
-                </div>
-              </div>
-            </article>
-          </a>
+              </article>
+            )}
+          </ScrubLink>
         ))}
 
-        <a
+        <ScrubLink
           href="https://github.com/pranjalsingh03"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="project-card-link"
           style={
             {
               "--card-span": "span 12",
@@ -244,14 +275,16 @@ const Projects = () => {
             } as React.CSSProperties
           }
         >
-          <article className="project more-project">
-            <div>
-              <div className="plus">＋</div>
-              <strong>More in the lab</strong>
-              <div className="mono">Small experiments, Apify/Apollo automations &amp; GitHub repos</div>
-            </div>
-          </article>
-        </a>
+          {() => (
+            <article className="project more-project">
+              <div>
+                <div className="plus">＋</div>
+                <strong>More in the lab</strong>
+                <div className="mono">Small experiments, Apify/Apollo automations &amp; GitHub repos</div>
+              </div>
+            </article>
+          )}
+        </ScrubLink>
       </div>
     </section>
   );

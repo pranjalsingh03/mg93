@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import ScrollWords from "@/Components/Motion/scrollWords";
 
 const About = () => {
   return (
@@ -18,9 +19,11 @@ const About = () => {
       </div>
       <div className="about-intro">
         <div className="about-copy">
-          <p className="lead">
-            I build secure, robust, and high-performance software systems that <em>scale to 100,000+ (1 Lakh+) users</em>.
-          </p>
+          <ScrollWords
+            className="lead"
+            text="I build secure, robust, and high-performance software systems that"
+            highlight="scale to 100,000+ (1 Lakh+) users."
+          />
           <p>
             B.Tech in Computer Science &amp; Engineering from Lovely Professional University (2022 – 2026), with 2+ years of hands-on experience taking technical ownership of complex web, mobile, and AI systems across fintech and AI-SaaS.
           </p>

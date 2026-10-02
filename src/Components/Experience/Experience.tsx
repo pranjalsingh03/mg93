@@ -1,7 +1,28 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, MotionValue, useScroll, useSpring, useTransform } from "framer-motion";
+import useWide from "@/Components/Motion/useWide";
+
+const ROLES = 3;
+
+// Each role card pins, then shrinks and dims as the next card slides over it
+function useStackStyle(progress: MotionValue<number>, i: number) {
+  const depth = ROLES - 1 - i;
+  const scale = useTransform(progress, [i / ROLES, 1], [1, 1 - depth * 0.05]);
+  const filter = useTransform(progress, [i / ROLES, 1], ["brightness(1)", `brightness(${1 - depth * 0.3})`]);
+  return { scale, filter };
+}
 
 const Experience = () => {
+  const shell = useRef<HTMLDivElement>(null);
+  const wide = useWide();
+  // Timeline rail fills as the reader travels through the roles
+  const { scrollYProgress } = useScroll({ target: shell, offset: ["start 75%", "end 55%"] });
+  const scaleY = useSpring(scrollYProgress, { stiffness: 110, damping: 28, mass: 0.4 });
+  const { scrollYProgress: stack } = useScroll({ target: shell, offset: ["start start", "end end"] });
+  const styles = [useStackStyle(stack, 0), useStackStyle(stack, 1), useStackStyle(stack, 2)];
+  const cardStyle = (i: number) => (wide ? { ...styles[i], top: `${110 + i * 28}px` } : undefined);
+
   return (
     <section className="section" id="experience">
       <div className="section-head">
@@ -13,13 +34,14 @@ const Experience = () => {
           2+ years shipping production web, mobile, and AI-integrated applications across fintech and AI-SaaS.
         </p>
       </div>
-      <div className="experience-shell">
+      <div className={`experience-shell ${wide ? "stacked" : ""}`} ref={shell}>
+        <motion.span className="exp-rail" style={{ scaleY }} aria-hidden="true" />
         <div className="exp-top mono">
           <span>ROLE / ORGANIZATION</span>
           <span>PERIOD / FOCUS</span>
         </div>
 
-        <article className="exp exp-biapay">
+        <motion.article className="exp exp-biapay" style={cardStyle(0)}>
           <div className="exp-date">
             <span className="exp-dot" aria-hidden="true" />
             NOV 2025 — PRESENT<br />
@@ -43,9 +65,9 @@ const Experience = () => {
             Built from Scratch · React · Banking Security<br />
             <span className="exp-badge">Fintech / Bank Security &amp; Compliance</span>
           </div>
-        </article>
+        </motion.article>
 
-        <article className="exp exp-omnitutor">
+        <motion.article className="exp exp-omnitutor" style={cardStyle(1)}>
           <div className="exp-date">
             <span className="exp-dot" aria-hidden="true" />
             MAY 2025 — OCT 2025
@@ -67,9 +89,9 @@ const Experience = () => {
             Next.js · WebRTC · WebSockets · AI<br />
             <span className="exp-badge">800+ Active Learners</span>
           </div>
-        </article>
+        </motion.article>
 
-        <article className="exp exp-sheshya">
+        <motion.article className="exp exp-sheshya" style={cardStyle(2)}>
           <div className="exp-date">
             <span className="exp-dot" aria-hidden="true" />
             JUL 2024 — APR 2025
@@ -92,7 +114,7 @@ const Experience = () => {
             Flutter · React · Node.js · Docker · GCP<br />
             <span className="exp-badge">100+ APIs / Multimodal AI</span>
           </div>
-        </article>
+        </motion.article>
       </div>
     </section>
   );

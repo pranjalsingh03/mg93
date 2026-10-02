@@ -12,17 +12,21 @@ import CaseStudies from "@/Components/CaseStudies/caseStudies";
 import Process from "@/Components/Process/process";
 import Philosophy from "@/Components/Philosophy/philosophy";
 import Footer from "@/Components/Footer/footer";
+import Story from "@/Components/Story/story";
+import ScrollFx from "@/Components/Motion/scrollFx";
 import "../app/globals.css";
 
 export default function Home() {
   return (
     <>
+      <ScrollFx />
       <div className="grid-bg" aria-hidden="true" />
       <div className="wrap">
         <Header />
         <Intro />
       </div>
       <Marquee />
+      <Story />
       <div className="wrap">
         <About />
         <Lang />
